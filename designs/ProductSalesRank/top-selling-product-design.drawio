@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-07-20T13:43:23.299Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36" etag="chcKtGngC3D6SHTGF7lv" version="14.9.0" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-07-20T13:47:06.218Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36" etag="mKEYFDix4mFNI5z70CiI" version="14.9.0" type="github" pages="4">
   <diagram id="PE5aDVBCW2WV5xDOKwPA" name="Page-1">
     <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -441,7 +441,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="joq_PnhEp3dH7kk43pni" name="Page-4">
-    <mxGraphModel dx="981" dy="550" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="dpQRUKvZzjWV9X39KUQt-0" />
         <mxCell id="dpQRUKvZzjWV9X39KUQt-1" parent="dpQRUKvZzjWV9X39KUQt-0" />
@@ -697,6 +697,21 @@
         </mxCell>
         <mxCell id="LpoU84QX4xWEJZ8kbu-9-52" value="Request Product list in category" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="dpQRUKvZzjWV9X39KUQt-1">
           <mxGeometry x="290" y="780" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="j5pimSlkyFrCAIbTQcFa-2" value="3. First Run of Batch Job" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontStyle=1" vertex="1" parent="dpQRUKvZzjWV9X39KUQt-1">
+          <mxGeometry x="90" y="1170" width="640" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="j5pimSlkyFrCAIbTQcFa-19" value="ProductRank" style="html=1;dashed=0;whitespace=wrap;shape=partialRectangle;right=0;fontSize=12;verticalAlign=middle;" vertex="1" parent="dpQRUKvZzjWV9X39KUQt-1">
+          <mxGeometry x="560" y="1600" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="j5pimSlkyFrCAIbTQcFa-30" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Scheduler.svg;" vertex="1" parent="dpQRUKvZzjWV9X39KUQt-1">
+          <mxGeometry x="90" y="1270" width="68" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="j5pimSlkyFrCAIbTQcFa-31" value="Initiate Batch Job" style="html=1;dashed=0;whitespace=wrap;fontSize=12;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="dpQRUKvZzjWV9X39KUQt-1">
+          <mxGeometry x="260" y="1279" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="j5pimSlkyFrCAIbTQcFa-32" value="Fetch Sales Report" style="html=1;dashed=0;whitespace=wrap;fontSize=12;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="dpQRUKvZzjWV9X39KUQt-1">
+          <mxGeometry x="470" y="1279" width="100" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
