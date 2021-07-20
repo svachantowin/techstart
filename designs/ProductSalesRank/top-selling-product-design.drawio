@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-07-20T12:18:15.903Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36" etag="ZdiTQLKolESteD410A7d" version="14.9.0" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-07-20T12:22:00.345Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36" etag="JojDILZP5piFZEvwcuhK" version="14.9.0" type="github" pages="3">
   <diagram id="PE5aDVBCW2WV5xDOKwPA" name="Page-1">
-    <mxGraphModel dx="1662" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -210,11 +210,14 @@
         <mxCell id="S1BR4_-P_bx4bsNWqFX8-2" value="Read replica of &lt;br&gt;Product RanK DB" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.rds_db_instance_read_replica;fillColor=#2E73B8;gradientColor=none;" parent="1" vertex="1">
           <mxGeometry x="410.5" y="444.5" width="49.5" height="66" as="geometry" />
         </mxCell>
+        <mxCell id="rCA7YRMv7wuZMkXIlPaW-1" value="High Level Architecture of Top Selling Product Requirement" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=30;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="200" y="55" width="730" height="20" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="9Op3YcD91cRjsHmRzf-5" name="Page-2">
-    <mxGraphModel dx="1662" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="RSwNAczLwispNysJDXz--0" />
         <mxCell id="RSwNAczLwispNysJDXz--1" parent="RSwNAczLwispNysJDXz--0" />
@@ -360,6 +363,17 @@
         <mxCell id="mwp-9KlVtDIJ9-FUC3s--6" value="Unit &lt;br&gt;Testing" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="RSwNAczLwispNysJDXz--1">
           <mxGeometry x="220" y="436" width="60" height="20" as="geometry" />
         </mxCell>
+        <mxCell id="sC9rXdUmM4ByoY4Ch0Tj-0" value="Deployment Architecture&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=30;fontStyle=1" vertex="1" parent="RSwNAczLwispNysJDXz--1">
+          <mxGeometry x="200" y="55" width="730" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="BsQruOcCNPKl8VU27bfE" name="Page-3">
+    <mxGraphModel dx="1662" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="ltmqyvB_3LQkz9QAG6pI-0" />
+        <mxCell id="ltmqyvB_3LQkz9QAG6pI-1" parent="ltmqyvB_3LQkz9QAG6pI-0" />
       </root>
     </mxGraphModel>
   </diagram>
