@@ -1,0 +1,44 @@
+User --> Select Product 
+			--> Get Product rank by ProductID in all product category
+					--> Check Cache for Sales Rank 
+							--> Return Sales rank to user
+							|
+							--> Query Sales rank from DB
+									--> Store rank in cache
+											--> Return sales rank to user
+
+
+User --> Select Category
+			--> Get Top 'n' product in category 
+					--> Check cache for top n products
+							--> Return products to user by Pagination
+							|
+							--> Query Top n products from DB
+									--> Store products in cache
+											--> Return products to user by pagination
+											
+
+First Run of Batch 
+	--> Check Sales Rank Data exist
+			--> No Product Rank Exist
+					--> Fetch Product & category from Master Data
+							--> Update product rank table & Product with 0 sales
+			--> Product rank table data exist
+					--> Initiate Batch job			
+																
+
+After Every 1 Hour
+	--> Initiate Batch Job
+			--> Check Dropbox for new file
+					--> Process Data
+							-->Calculate Rank 
+									--> Persist Product rank to DB
+									
+
+Integrate with Product Seller
+@Scheduled Interval - Not every hour
+	--> Initiate Batch Job
+			--> For each categories 
+					--> Pull rank of all products 
+							--> Publish rank in queue 
+									
