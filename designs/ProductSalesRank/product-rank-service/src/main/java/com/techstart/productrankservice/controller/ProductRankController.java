@@ -40,7 +40,7 @@ public class ProductRankController {
         return ResponseEntity.ok(new ProductRankResponse());
     }
 
-    @GetMapping("/byCategory")
+
     @Operation(summary = "Endpoint to fetch top n products in given categoryId")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successfully fetched top n product",
@@ -49,6 +49,7 @@ public class ProductRankController {
             @ApiResponse(responseCode = "400", description = "Invalid Arguments supplied",
                     content = @Content)
     })
+    @GetMapping("/byCategory")
     public ResponseEntity<?> getTopNrank(@RequestBody CategoryRequest categoryRequest) throws EntityNotFoundException {
         return ResponseEntity.ok(new CategoryRankResponse());
     }

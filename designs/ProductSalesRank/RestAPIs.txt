@@ -1,0 +1,31 @@
+	API Format:
+	
+	/api/v1/productRanks/{productId}	
+	--------------------------------
+	@Operation(summary = "Endpoint to fetch the Sales rank of Given productId in all related categories")
+	@ApiResponses(value = {
+			@ApiResponse(responseCode = "200", description = "Successfully fetched rank of the product",
+					content = { @Content(mediaType = "application/json",
+							schema = @Schema(implementation = ProductRankResponse.class)) }),
+			@ApiResponse(responseCode = "400", description = "Invalid Arguments supplied",
+					content = @Content)
+	})
+	@GetMapping("/{productId}")
+	public ResponseEntity<?> getProductRank(@PathVariable(value = "productId") Long productId) throws EntityNotFoundException {
+		return ResponseEntity.ok(new ProductRankResponse());
+	}
+
+	/api/v1/productRanks/byCategory
+	-------------------------------
+    @Operation(summary = "Endpoint to fetch top n products in given categoryId")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully fetched top n product",
+                    content = { @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = CategoryRankResponse.class)) }),
+            @ApiResponse(responseCode = "400", description = "Invalid Arguments supplied",
+                    content = @Content)
+    })
+    @GetMapping("/byCategory")
+    public ResponseEntity<?> getTopNrank(@RequestBody CategoryRequest categoryRequest) throws EntityNotFoundException {
+        return ResponseEntity.ok(new CategoryRankResponse());
+    }
