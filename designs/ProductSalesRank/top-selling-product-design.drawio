@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-07-20T14:21:37.113Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36" etag="ZOtSDQZfFrZU-1Z5ik1K" version="14.9.0" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-07-20T14:22:35.174Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36" etag="kdD_-rNyJqH460IxSUsc" version="14.9.0" type="github" pages="4">
   <diagram id="PE5aDVBCW2WV5xDOKwPA" name="Page-1">
     <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -441,7 +441,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="joq_PnhEp3dH7kk43pni" name="Page-4">
-    <mxGraphModel dx="1185" dy="665" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="dpQRUKvZzjWV9X39KUQt-0" />
         <mxCell id="dpQRUKvZzjWV9X39KUQt-1" parent="dpQRUKvZzjWV9X39KUQt-0" />
@@ -797,7 +797,7 @@
           <mxGeometry x="400" y="1692" width="100" height="50" as="geometry" />
         </mxCell>
         <mxCell id="3yjevhtNPnZfehPZUp5X-11" value="Dropbox" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.dropbox;fillColor=#0287EA" vertex="1" parent="dpQRUKvZzjWV9X39KUQt-1">
-          <mxGeometry x="678.5999999999999" y="1660" width="73.4" height="62" as="geometry" />
+          <mxGeometry x="719.9999999999999" y="1670" width="73.4" height="62" as="geometry" />
         </mxCell>
         <mxCell id="3yjevhtNPnZfehPZUp5X-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;" edge="1" parent="dpQRUKvZzjWV9X39KUQt-1" source="3yjevhtNPnZfehPZUp5X-14" target="3yjevhtNPnZfehPZUp5X-10">
           <mxGeometry relative="1" as="geometry" />
@@ -867,6 +867,12 @@
         </mxCell>
         <mxCell id="3yjevhtNPnZfehPZUp5X-58" value="Changed Product Rank only" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="dpQRUKvZzjWV9X39KUQt-1">
           <mxGeometry x="484.3" y="1885" width="40" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3yjevhtNPnZfehPZUp5X-59" value="CSV File" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="dpQRUKvZzjWV9X39KUQt-1">
+          <mxGeometry x="535" y="1691" width="55" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="3yjevhtNPnZfehPZUp5X-60" value="CSV File" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="dpQRUKvZzjWV9X39KUQt-1">
+          <mxGeometry x="600" y="1191" width="55" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
