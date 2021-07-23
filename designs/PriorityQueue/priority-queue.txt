@@ -1,0 +1,29 @@
+Priority Queue
+ - Elements 
+	- Data
+	- Priority (1 - Greater , N>1 - lower)
+
+FIFO
+	
+Enque
+Deque - Should have based on priority
+
+Priority - order to be changed based on the priority
+
+Webservice 
+ - Endpoints
+ - Data 
+ - 
+
+
+Enque - POST
+Deque - PUT 
+
+/api/v1/priority-queues/
+{
+	String data,
+	int priority;
+}
+
+
+

@@ -1,0 +1,51 @@
+//Assume a file
+// First Column - Account Number - 10001
+// Customer Name - John
+// Customer Balance - 45
+// Currency - USD
+
+// Send a email to customer when balance is less than 50 USD 
+
+// Integrate with 3rd Party Server to trigger service to send Email
+
+- Interval /Period - Once in a day
+- Number of records in that file - 500K per day 
+
+- Whom we sent mail - Store - Schema to be defined
+
+- URL EndPoint to access the Email Info From Customer Service
+  - api/v1/customers/{id} ==> id = AccountNumber 
+
+- Rule Engine to be defined
+	- About the period to communicate
+	- 
+
+Possible Problem:
+ - Duplicate Entries in DB
+
+- NotificationSchema
+	- AccountNumber
+	- Updated Date
+	- Balance during mail 
+	
+
+- TechStack
+	- Java
+	- Springboot  - Springbatch
+	- Microservices
+	- PostgreSql (SQL)
+	
+Required Modules
+ - Reading from Storage
+ - Sending Notification
+ - Crunching the data
+	- CustomerEntity
+	- Processor
+	- Rule Engine
+	
+	
+
+ 
+ 
+ 
+ 
