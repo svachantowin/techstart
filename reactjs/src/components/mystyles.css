@@ -1,0 +1,20 @@
+.app-header{
+
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+    height: 1em;
+    color: rebeccapurple;
+    background-color: sandybrown;
+
+}
+
+.app-image{
+    display: flex;
+    background-color: seagreen;
+    height: 20em;
+    align-items: center;
+    padding-left: 2em;
+    justify-content: space-around;
+    
+}
