@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.techstart</groupId>
+    <artifactId>ProtobufImpl</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty-shaded</artifactId>
+            <version>1.32.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-protobuf</artifactId>
+            <version>1.32.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-stub</artifactId>
+            <version>1.32.1</version>
+        </dependency>
+        <dependency> <!-- necessary for Java 9+ -->
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>annotations-api</artifactId>
+            <version>6.0.53</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <extensions>
+            <extension>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>1.6.2</version>
+            </extension>
+        </extensions>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                    <!--                    <release>11</release>-->
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.xolstice.maven.plugins</groupId>
+                <artifactId>protobuf-maven-plugin</artifactId>
+                <version>0.6.1</version>
+                <configuration>
+                    <protocArtifact>
+                        com.google.protobuf:protoc:3.15.8:exe:${os.detected.classifier}
+                    </protocArtifact>
+                    <pluginId>grpc-java</pluginId>
+                    <pluginArtifact>
+                        io.grpc:protoc-gen-grpc-java:1.22.1:exe:${os.detected.classifier}
+                    </pluginArtifact>
+                    <protoSourceRoot>
+                        ${basedir}/src/main/proto/
+                    </protoSourceRoot>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <!--                            compiles & java Protobuf code -->
+                            <goal>compile-custom</goal>
+                            <!--                            compile & generate C++ protobuf code-->
+                            <goal>compile-cpp</goal>
+                        </goals>
+                    </execution>
+
+                    <execution>
+                        <id>protoc-grpc-cpp</id>
+                        <goals>
+                            <goal>compile-custom</goal>
+                        </goals>
+                        <configuration>
+                            <pluginId>grpc-cpp</pluginId>
+                            <!-- You may need to run `which grpc_cpp_plugin` beforehand to determine the actual path-->
+                            <pluginExecutable>${basedir}\dependency\grpc_cpp_plugin.exe</pluginExecutable>
+                            <!--                            <pluginExecutable>D:\Siva\Tools\grpc_deliverables\x64\Release\grpc_cpp_plugin.exe</pluginExecutable>-->
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--            <plugin>-->
+            <!--                <groupId>org.apache.maven.plugins</groupId>-->
+            <!--                <artifactId>maven-compiler-plugin</artifactId>-->
+            <!--                <configuration>-->
+            <!--                    <source>11</source>-->
+            <!--                    <target>11</target>-->
+            <!--                    &lt;!&ndash;                    <release>11</release>&ndash;&gt;-->
+            <!--                </configuration>-->
+            <!--            </plugin>-->
+
+            <!--            <plugin>-->
+            <!--                <groupId>org.xolstice.maven.plugins</groupId>-->
+            <!--                <artifactId>protobuf-maven-plugin</artifactId>-->
+            <!--                <version>0.6.1</version>-->
+            <!--                <configuration>-->
+            <!--                    <protocArtifact>-->
+            <!--                        com.google.protobuf:protoc:3.15.8:exe:${os.detected.classifier}-->
+            <!--                    </protocArtifact>-->
+            <!--                    <pluginId>grpc-cpp</pluginId>-->
+            <!--                    <pluginArtifact>-->
+            <!--                        io.grpc:protoc-gen-grpc-java:1.22.1:exe:${os.detected.classifier}-->
+            <!--                    </pluginArtifact>-->
+            <!--                    <protoSourceRoot>-->
+            <!--                        ${basedir}/src/main/proto/-->
+            <!--                    </protoSourceRoot>-->
+            <!--                </configuration>-->
+            <!--                <executions>-->
+            <!--&lt;!&ndash;                    <execution>&ndash;&gt;-->
+            <!--&lt;!&ndash;                        <goals>&ndash;&gt;-->
+            <!--&lt;!&ndash;                            <goal>compile</goal>&ndash;&gt;-->
+            <!--&lt;!&ndash;                            <goal>compile-custom</goal>&ndash;&gt;-->
+            <!--&lt;!&ndash;                        </goals>&ndash;&gt;-->
+            <!--&lt;!&ndash;                    </execution>&ndash;&gt;-->
+            <!--                    <execution>-->
+            <!--                        <goals>-->
+            <!--                            <goal>compile</goal>-->
+            <!--                            <goal>compile-cpp</goal>-->
+            <!--                        </goals>-->
+            <!--                    </execution>-->
+            <!--                        <execution>-->
+            <!--                            <id>protoc-grpc-cpp</id>-->
+            <!--                            <goals>-->
+            <!--                                <goal>compile-custom</goal>-->
+            <!--                            </goals>-->
+            <!--                            <configuration>-->
+            <!--                                <pluginId>grpc-cpp</pluginId>-->
+            <!--                                &lt;!&ndash; You may need to run `which grpc_cpp_plugin` beforehand to determine the actual path&ndash;&gt;-->
+            <!--                                <pluginExecutable>D:\Siva\Tools\grpc_deliverables\x64\Release\grpc_cpp_plugin.exe</pluginExecutable>-->
+            <!--                            </configuration>-->
+            <!--                        </execution>-->
+            <!--                </executions>-->
+            <!--            </plugin>-->
+        </plugins>
+    </build>
+
+</project>
