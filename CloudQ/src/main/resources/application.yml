@@ -1,0 +1,38 @@
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: siva
+    password: siva
+    virtual-host: siva_host
+  cloud:
+    stream:
+      bindings:
+        IODriver-HMI-PublishChannel:
+          destination: app.exchange.techstart
+        Control-IODriver-ReceiveChannel:
+          destination: app.exchange.techstart
+          group: com.techstart.control_ioQ
+      rabbit:
+        bindings:
+          IODriver-HMI-PublishChannel:
+            producer:
+              exchangeType: topic
+              routing-key-expression: headers['routeTo']
+          Control-IODriver-ReceiveChannel:
+            consumer:
+              bindingRoutingKey: com.techstart.controlIoData
+              exchangeType: topic
+              maxLength: 100000
+logging:
+  level:
+    org:
+      springframework:
+        web: ERROR
+    com:
+      techstart:
+        rabbitmq: INFO
+  file: log/cloudQ.log
+runtime:
+  periodicSend:
+    cronExpression: 0 0/1 * * * *
