@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ecommerce;
+option java_package = "com.techstart.protobuf.ecommerce";
+option java_multiple_files = true;
+
+enum PacketType{
+  PACKET_NONE=0;
+  DATA=1;
+  SYSTEM_STATUS=2;
+
+}
