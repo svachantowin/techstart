@@ -9,8 +9,8 @@ public class TwoLaneRoad {
     public static void main(String[] args) {
 
         //Input 1 - Exp Output = 4
-        String l1 = "..xx.x.";
-        String l2 = "x.x.x..";
+//        String l1 = "..xx.x.";
+//        String l2 = "x.x.x..";
 
         //Input2 - Exp Output = 6
 //        String l1 = ".xxx...x";
@@ -21,8 +21,8 @@ public class TwoLaneRoad {
 //        String l2 = ".x..x";
 
         //Input4 - Exp output = 2
-//        String l1 = "x...x";
-//        String l2 = "..x..";
+        String l1 = "x...x";
+        String l2 = "..x..";
 
         System.out.println("MaxPotHoles that can be repaired :"+maxRepair(l1,l2));
     }
@@ -60,17 +60,29 @@ public class TwoLaneRoad {
             System.out.println();
         }
 
+        Arrays.fill(visitedMap[0],0);
+        Arrays.fill(visitedMap[1],0);
+
+        for(int i=0;i<visitedMap.length;i++){
+            for(int j=0;j< visitedMap[0].length;j++){
+                System.out.print(visitedMap[i][j]+" ");
+            }
+            System.out.println();
+        }
+
         System.out.println("TotalPotHoles :"+totalPotHoles);
 
-        traverse(routeMap,new int[]{0,0},0,new int[]{0,0},false);
-        traverse(routeMap,new int[]{1,0},0,new int[]{1,0},false);
+        traverse(routeMap,visitedMap,new int[]{0,0},0,new int[]{0,0});
+        Arrays.fill(visitedMap[0],0);
+        Arrays.fill(visitedMap[1],0);
+        traverse(routeMap,visitedMap,new int[]{1,0},0,new int[]{1,0});
 
         System.out.println("MinPotHoles :"+minPotHoles);
 
         return totalPotHoles-minPotHoles;
     }
 
-    public static void traverse(int[][] routeMap, int[] coordindates, int count, int[] prevNode,boolean turnedAlready){
+    public static void traverse(int[][] routeMap, int[][] visitedMap, int[] coordindates, int count, int[] prevNode){
 
         int row = coordindates[0];
         int col = coordindates[1];
@@ -107,20 +119,16 @@ public class TwoLaneRoad {
         int prevCol = prevNode[1];
 
         if(row == 0){
-            if(row+1!=prevRow && turnedAlready==false) {
-                traverse(routeMap, new int[]{row + 1, col}, count, new int[]{row, col}, true);
-                turnedAlready=true;
-            }
+
+            if(row+1!=prevRow)
+                traverse(routeMap,visitedMap,new int[]{row+1,col},count,new int[]{row,col});
         }
         if(row == 1){
-            if(row-1!=prevRow && turnedAlready==false){
-                traverse(routeMap,new int[]{row-1,col},count,new int[]{row,col},true);
-                turnedAlready=true;
-            }
-
+            if(row-1!=prevRow)
+                traverse(routeMap,visitedMap,new int[]{row-1,col},count,new int[]{row,col});
         }
         if(col+1!=prevCol)
-            traverse(routeMap,new int[]{row,col+1},count,new int[]{row,col},turnedAlready);
+            traverse(routeMap,visitedMap,new int[]{row,col+1},count,new int[]{row,col});
 
     }
 
