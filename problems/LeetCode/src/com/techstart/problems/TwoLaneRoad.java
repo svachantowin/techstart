@@ -2,6 +2,17 @@ package com.techstart.problems;
 
 import java.util.Arrays;
 
+// Problem statement
+// Two lane road problem
+// Lane1 & Lane2 are given as string where . represents road & x represents potholes
+// Aim of the problem - Without disturbing the traffic, potholes should be repaired
+// Constraints - Traffic should not be stopped
+// Vehicles should reach from one end to another end of the lane
+// It is ok to have potholes in the reroutes path
+// Maximum of one switch between lanes is allowed
+// Find maximum number of potholes that can be repaired without disturbing the moving traffic
+
+
 public class TwoLaneRoad {
 
     static int minPotHoles = Integer.MAX_VALUE;
