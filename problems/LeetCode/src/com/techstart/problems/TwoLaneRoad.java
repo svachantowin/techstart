@@ -20,8 +20,8 @@ public class TwoLaneRoad {
     public static void main(String[] args) {
 
         //Input 1 - Exp Output = 4
-//        String l1 = "..xx.x.";
-//        String l2 = "x.x.x..";
+        String l1 = "..xx.x.";
+        String l2 = "x.x.x..";
 
         //Input2 - Exp Output = 6
 //        String l1 = ".xxx...x";
@@ -32,8 +32,8 @@ public class TwoLaneRoad {
 //        String l2 = ".x..x";
 
         //Input4 - Exp output = 2
-        String l1 = "x...x";
-        String l2 = "..x..";
+//        String l1 = "x...x";
+//        String l2 = "..x..";
 
         System.out.println("MaxPotHoles that can be repaired :"+maxRepair(l1,l2));
     }
@@ -71,11 +71,13 @@ public class TwoLaneRoad {
 
         System.out.println("TotalPotHoles :"+totalPotHoles);
 
+
         traverse(routeMap,new int[]{0,0},0,new int[]{0,0},false);
         traverse(routeMap,new int[]{1,0},0,new int[]{1,0},false);
 
         System.out.println("MinPotHoles :"+minPotHoles);
 
+        // Subtracting MinPotHoles from totalPotholes will give number of potholes to be repaired
         return totalPotHoles-minPotHoles;
     }
 
@@ -108,6 +110,7 @@ public class TwoLaneRoad {
 //        System.out.println("Row :"+row +" Col:"+col +" Count:"+count);
 
         if(col == routeMap[0].length-1){
+            // MinPotHoles can be arrived only after reaching end of the lane
             minPotHoles = Math.min(minPotHoles,count);
             return;
         }
@@ -118,13 +121,15 @@ public class TwoLaneRoad {
         boolean switchLane = false;
         if(row == 0){
 
-            if(row+1!=prevRow && turnedAlready==false) {
+//            if(row+1!=prevRow && turnedAlready==false) {
+            if(turnedAlready==false) {
                 switchLane = true;
                 traverse(routeMap, new int[]{row + 1, col}, count, new int[]{row, col},switchLane);
             }
         }
         else if(row == 1){
-            if(row-1!=prevRow && turnedAlready==false) {
+//            if(row-1!=prevRow && turnedAlready==false) {
+          if(turnedAlready==false) {
                 switchLane = true;
                 traverse(routeMap, new int[]{row - 1, col}, count, new int[]{row, col}, switchLane);
             }

@@ -1,0 +1,136 @@
+
+putchar API -> any single char
+Outout -> true/false & string 
+true -> ___s_
+false -> same string again
+
+
+
+
+Question - Minimum number of attempts to guess the word
+
+Apple
+Angle
+Mango
+Orange
+
+trie datastructure 
+
+  a
+p   n
+
+p   g 
+
+
+ m
+a
+n
+
+a -> [apple,angle,mango]
+o -> [mango, orange]
+p
+l
+e
+m
+n
+g
+r
+
+a-> [0] -> [apple,angle]
+a-> [1] -> [Mango]
+a-> [2] -> [Orange]
+
+
+Map<char,Map<int,List<String>>>
+
+1st search - a
+a _ _ _ _
+
+2 search - p
+a p p _ _
+
+2 search - p
+a _ _ _ _
+
+
+Result putchar(char, identifiedWord);
+
+Result {
+	boolean charExist;
+	String wordWithChar;
+}
+
+
+class HangManIO{
+
+Map<char,Map<int,List<String>>> dictionary = null;
+
+HangManIO(){
+	dictionary = new HashMap<>();
+}	
+
+String guessWords(int length){
+
+	Map<char,boolean> foundChars = new HashMap<>();
+	
+	String wordGuessed = new String();
+
+	boolean wordFound = false;
+	
+	char c = 65 + Math.random(0,25);
+	char[] word = new char[length];
+
+	while(!wordFound){
+
+
+		Result result = putchar(c,word);
+
+		if(!result.charExist){
+			c = 65 + Math.random(0,25);	
+			continue;
+		}
+		char newFoundChar;
+		List<int> indexes = new ArrayList<>();
+
+		for(char c : result.wordWithChar){
+			if(foundChars.containskey(c)){
+				continue;
+			}
+			newFoundChar = c;
+			// char index
+			indexes.add(index);
+			foundChars.put(c,true);
+		}
+
+		if(dictionary.containsKey(newFoundChar)){
+			for(int index : indexes){
+				if(dictionary.values.containskey(index)){
+					getNextPossibleChar(words,foundChars)
+				}
+			}
+			
+		}
+
+
+	}
+
+
+	return wordGuessed;
+}
+
+char getNextPossibleChar(List<String> words, Map<char, boolean> foundChars){
+	
+	for(String word : words){
+		for()
+	}
+
+}
+
+boolean storeWords(List<String> dictWords){
+
+
+}
+
+}
+
+
