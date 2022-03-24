@@ -1,0 +1,26 @@
+Character Array
+
+[a,a,b,c,a,b,c] -> [a,b,c,\0]
+
+->a#$Sssssv
+->
+
+
+char[] findUnique(char[] input){
+	
+	Set<Character> uniqueSet = new HashSet<>();
+	int uniPointer = 0;
+
+	for(int i=0;i<input.length;i++){
+		character element  = input[i];
+		if(uniqueSet.contains(element)){
+			continue;
+		}
+		uniqueSet.add(element);
+		input[uniPointer] = input[i];
+		uniPointer++;
+	}
+	uniqueSet[uniPointer] = '\0';
+
+	return input;
+}

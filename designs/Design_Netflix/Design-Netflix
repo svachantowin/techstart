@@ -1,0 +1,55 @@
+Design Netflix
+
+- Video Streaming Application with Admin content
+- Global Product
+
+- Video Streaming - User interactions will be major part here
+	- 300 Million Active users
+		- Peak Usage - 10% of the user
+			- 30 Million Active user at peak time
+	- 20000 Videos 
+		- Movies
+		- Serials
+		- Other contents (documentary,etc)
+		- Videos
+			- normal - 240p - 1GB /1HR
+			- High Definition - 1080p - 2GB/ 1HR
+
+Math for Peak Usage
+	- Arrive at scale
+		- 30M * 2GB = 30,000,000 * 2 000,000,000 = 60 PB = 60000 TB/H = 1000 TB/M = 17 TB/sec
+	- Storage Space
+		- 20000 * 1GB = 20 TB
+		- 20000 * 2GB = 40 TB
+
+StoreServ
+	- It handles the input from Admin & Upload HD videos to S3 & Enque a event
+
+EncoderServ
+	- Event from Queue - S3 link for the video
+	- Actions
+		- Convert the video to different format
+		- Split into smaller chunks & store it & sequence should be stored
+		- {
+			id
+			videoLink
+			chunks[{s3link, seqId},{}]
+			format			
+		 }
+		- Key,value
+			{videoId, {}}
+
+	- Output
+
+
+
+Storage
+	- Standard Defintion
+	- High Definition
+
+
+	- Highly available
+	- Scalable
+
+
+- Admin Mgmt - Manage the content in Netflix

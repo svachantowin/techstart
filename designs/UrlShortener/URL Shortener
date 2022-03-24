@@ -1,0 +1,48 @@
+URL Shortener
+ - 
+
+ URL -> short url
+
+ - Highly scalable & available
+ - 5 years -> store the data
+ - Invalidate the url after N days
+ - 0 tps to 200 tps => max 5x for future perspective
+
+ 200 x 60sec x 60mins x 24 x 365days = 6,307,200,000 = ~6.5 Billion request per year
+
+
+ Expected
+ -> Rest API
+ -> How many services
+ -> Which DB
+ -> Cache?
+ -> Servers = scalability & availabilty
+ -> Deployment technique
+
+
+Input ->
+
+Long url -> Short URl
+Business Logic 
+ -> Convertion logic
+ -> Encryption or hashing can be used
+
+id, Longurl, shortUrl -> Table -> SQL
+
+
+-> Rest API	
+	POST Method
+	Request Payload {"origUrl":"value"}
+	Response Payload {"shortUrl":"value"}
+	RestAPI: /api/v1/url
+
+	GET Method
+	Request Payload {"shortUrl":"value"}
+	Response Payload {"shortUrl":"value","origUrl":"value"}
+	RestAPI: /api/v1/url	
+
+ -> How many services
+ -> Which DB
+ -> Cache?
+ -> Servers = scalability & availabilty
+ -> Deployment technique

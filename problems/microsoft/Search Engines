@@ -1,0 +1,35 @@
+Search Engines
+
+-> type -> cr
+
+cricket, caption, cow, crow
+
+Web application
+-> Search operation
+-> 
+
+-> In Memory Cache
+
+
+-> Trie - Tree data structure
+
+Node{
+	char value;
+	Node[] wordList; // -- 26 nodes 
+	boolean isEndOfTheWord;
+
+}
+
+c
+| |
+r a
+| |
+i
+|
+c
+|
+k
+|
+e
+|
+t

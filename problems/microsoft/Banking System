@@ -1,0 +1,27 @@
+Banking System
+
+Family Account -> Any operation -> Depositing, withdrawing -> Read & Write
+-> Multiple user operating at the same moment
+
+
+
+float getBalance(){
+	isOperationInProgress = true;
+	synchronized(object){
+		account.value;
+	}	
+	isOperationInProgress = false;
+}
+
+float withdrawAmount(float amount){
+	if(isOperationInProgress)
+		return;
+
+	synchronized(object){
+		account.value -= amount;
+	}
+}
+
+float depositAmount(){
+	
+}

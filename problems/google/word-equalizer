@@ -1,0 +1,88 @@
+Given two words word1 and word2, find the minimum number of operations required to convert word1 to word2.
+You have the following 3 operations permitted on a word:
+Insert a character
+Delete a character
+Replace a character
+
+Example sample
+
+sample sample
+
+-> 256 ASCII characters
+-> Repeated character -> Allowed
+-> Length of second & first word - any
+
+Input: word1 = "horse", word2 = "ros"
+
+  
+Explanation: 
+horse -> rorse (replace 'h' with 'r')
+rorse -> rose (remove 'r')
+rose -> ros (remove 'e')
+  
+
+  
+3 steps
+
+  horse => roses
+roses -> (insert s)
+4 steps
+
+
+
+-> If char[index] is same move to next element
+  
+  
+1.Character 
+2.Index
+
+ros -> Set -> character & Index
+
+ros
+
+horse
+
+word1 -> h***e
+
+int minOperation(String word1, String word2){
+  
+  List<Character> word1List = new LinkedList<>(word1);
+  int count = 0;
+//  horse - ros
+//  rose
+
+// word 2 = horse
+// word 1 = ros 
+ // count = 1
+ // rorse
+  if(word2.length==0)
+    return word1.length;
+  
+  for(int i=0;i<word2.length;i++){
+    character c = word2.charAt(i);
+    // Handle boundaries 
+    
+    if(word1List[i] == c)
+      continue;
+    if(i+1<word1.length && word1List[i+1] == c){
+      count++;
+      word1List.remove(i);
+      continue;
+    }
+    word1List[i] = c;    
+    count++;
+  }
+  
+  if(word1List.size() == word2.length)
+    return count;
+  
+  // trim the extra element;
+  for(int i=word2.length-1; i<word1.length;i++){
+  
+    word1List.remove(i);
+    count++;
+    }
+   return count;
+  
+}
+

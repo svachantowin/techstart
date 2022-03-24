@@ -1,0 +1,63 @@
+Tree  BT
+-> Method
+   -> True - if BST
+   -> Fasle - Not an BST
+
+
+ Assumptions
+ -> All values of the node is positive
+
+ Node {
+
+ 	int value;
+ 	Node leftChild;
+ 	Node rightChild;
+
+ }
+
+
+
+-> 		10					=> True
+	5			15		
+3		7	12		17
+	6		8	
+
+-> 		10						=> False
+	5			15
+3		11	12		17  
+
+ -> Recursive Approach
+
+ checkBST(Node node){
+
+ 	if(node==null)
+ 		return true;
+
+ 	return (checkBSTHelper(node.left, -1, node.value) &&
+ 				checkBSTHelper(node.left, node.value,-1)); 
+
+ }
+
+ boolean checkBSTHelper(Node node, int minValue, int maxValue){
+
+ 	if(node==null)
+ 	return true;
+
+
+
+ 	if(minValue !=-1 && maxValue!=-1 && node.value<minValue && node.value>maxValue)
+ 		return (checkBSTHelper(node.left,minValue,node.val) &&
+ 				checBSTHelper(node.right,node.value,maxValue));	
+
+
+ 	if(minValue == -1 && node.value <maxValue)
+ 		return (checkBSTHelper(node.left,minValue,node.val) &&
+ 				checBSTHelper(node.right,node.value,maxValue));	
+
+ 	if(maxValue == -1 && node.value > minValue)
+ 		return (checkBSTHelper(node.left,minValue,node.val) &&
+ 				checBSTHelper(node.right,node.value,maxValue));	
+
+ 	return false;
+
+ }

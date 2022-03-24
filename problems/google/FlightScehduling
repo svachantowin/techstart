@@ -1,0 +1,99 @@
+FlightScehduling
+ - Flights for day
+ 9  - Connecticut to LA
+ 
+ Find the earliest time to arrive at the desitination
+ 
+ 
+ interface Flight {
+  String id();      // "DL1234"
+  String fromAirport();  // "JFK"
+  String toAirport();     // "LAX"
+  int departureTime();  // minutes since midnight UTC, e.g., 600
+  int arrivalTime();  // minutes since midnight UTC, e.g., 950
+}
+
+1200 
+
+  CurrentTime - Flying From 
+  
+  1200 -> 1400  
+  1200 -> 1900
+  
+ current; 1200
+ JFK 1300 - LAX  2000
+ 
+ JFK 1200 - ORD 1300
+ ORD 1400 - LAX 1900
+   
+  - Shortest Path from Source -> destination => Earliest time
+  - Shortest path time should be greater than current time
+  - 
+  
+   Map  <Airport, Flight> 
+   Directed Graph - Construct
+   Start from the node == flyingFrom
+    -> No path. => -1
+    -> Single Path => Arrival Time
+    -> Multiple Path => Sort & return the earliest time     
+   Dijikshtra's Algorith 
+    - Adjacency list 
+    - Heap
+ /*   
+   Node{
+      int arrivalTime;
+      String destination;
+      Node(int aTime, String dest){
+        arrivalTime = aTime;
+        destination = dest;
+      } 
+   }*/
+    
+int earliestArrival(String flyingFrom, String flyingTo, int currentTime,  List<Flight> flights) {
+   
+   
+   // FlightId, Flight
+   Map<String,Flight> airports = new HashMap<>();
+  
+   //Kind of adjacency list
+   Map<String,List<Flight>> connections = new HashMap<>();
+   
+   for(Flight flight: flights){
+    
+    if(!connection.containsKey(flight.fromAirport)){
+      connections.add(new ArrayList<>());
+    }
+     connections.get(flight.fromAirport).add(flight);
+   }
+   
+//   [st1]->[stn2,stn3]
+  // [stn2] -> [stn4]    
+   
+   List<Flight> routes = connections.get(flyingFrom);
+   
+    int earliestTime = Integer.MAX_VALUE;
+    for(Flight flight : routes){
+        earliestTime = earliestTimeCalc(flight,curEarliestTime,connections);
+        
+    }   
+    if(earliestTime == Integer.MAX_VALUE)
+          return -1;      
+    
+    return earliestTime;
+   
+}
+
+int ealiestTimeCalc(Flight flight, int curEarliestTime,Map<String,List<Flight>> connections ){
+   if(flight.fromAirport.equals(flyingTo)){
+      return Math.min(flight.arrivalTime,curEarliestTime);
+   }
+   
+   List<Flight> routes = connections.get(fligt.fromAirport);
+   for(Flight flight : routes){
+      return earliestTimeCalc(flight,curEarliestTime,connections);  
+      
+    }   
+   
+   
+
+}
