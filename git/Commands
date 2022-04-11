@@ -1,0 +1,53 @@
+To list all branches tracking to branch-name
+ git remote show [branch-name]
+
+To list all remote branches
+ git remote show
+
+To rename a remote reference name locally
+ git remote rename [existing-remote-name] [new-remote-name]
+
+To commit on to the previous commit
+ git commit --amend
+
+To move the pointer to the commit id
+ git rebase -l [commit-id]
+	- This will list all the changes above this commitId
+	- Suppose there are 3 commits above this and you are interested in only 1 commit, this can be erased using this option
+	- This command will list all changes above this commit id and we can remote the unnecessary commits
+	- Once this changes are saved, git log will show the commits which we are interested in and other commits will not be tracked
+
+To rebase local branch from remote branch
+ git rebase [local-branch]
+
+To push the branch from Upstream remote repo to [your-remote-repo] your interested repo
+ git push [your-remote-repo] [branch-name] -u
+-u will track the branch and any changes made and pushed will go to that branch only
+
+To update local branch t0 remote repo branch
+ git push -f [remote-repo] develop-FEATURE-XXX:develop-FEATURE-XXX
+ git push -f exemptions develop-FEATURE-XXX:develop-FEATURE-XXX
+
+To fetch latest code from remote repo
+ git fetch [upstream-repo]
+
+To rebase your current branch to upstream develop branch
+ git rebase [upstream-repo]/[develop-branch]
+ This will rebase your local branch with latest content from the upstream remote repo. Basically syncing the remote content to your local repo
+
+Steps to sync remote upstream repo to local repo & to the forked repo
+
+Upstream Repo name: upstream
+Forked repo name : sivachandran
+
+In local repo checkout the branch of interest. develop mentioned here is pulled from sivachandran repo
+ git checkout develop
+
+Fetch all latest changes from upstream repo to local git
+ git fetch upstream
+
+Merge or sync the upstream changes to local repo of sivachandran/develop GIT
+ git rebase upstream/develop
+
+Push the changes of local repo sivachandran/develop to forked repo sivachandran
+ git push sivachandran develop

@@ -1,0 +1,99 @@
+Project discussion :
+
+
+Process Automation System
+	- SCADA - Supervisory Control And Data Acquisition - Product
+
+Steel Plant - 2 to 5 KM
+	- 10K Sensor
+
+- Every 50 msec
+
+
+
+
+
+
+System Monitoring
+	- Monitor healthiness of all connected devices network
+	- Node, PLCs, Switches, Printer, Special devices, Ethernet Cable
+
+IEC Stand 61970 - Common information model
+ - Power System 
+
+Graph Model
+	- network topology
+	- 
+
+
+	- 
+
+
+
+
+
+
+
+Design : 
+Example : youtube 
+Video uploader : 
+	-> Upload content  (constraints) : capacity planning
+	-> search based on tags, keywords (data processing)
+	-> engagement of a video / user /comments/ likes   (raw data )
+
+Upload Content
+	- Video 
+	     - Format of video - mp4, mpeg
+	    -  Quality - SD/ HD/ UHD - Consider it as Instagram videos 
+		- large Size video - 50 MB
+		- max size - 50MB 
+		- min size - anything
+	- 1000 User Per Day will be using it
+	- Total number of User
+		- 1 Million User active user
+	- 20% of 1000 user will upload daily
+	- 80% of 1000 will be only viewing
+Capacity Planning
+	- 1 Million User - allow to store 1000 per user 
+Storage
+	- 1 Million  * 1000 * 50MB = 1000,000 * 1000 = 1Billion * 50 MB = 50 PBytes = max
+	- max / 2 = 25 PB
+Data Upload
+
+	- 200 * 25 MB * 24 = 120 GB per hour = ~33 MBps
+	
+Data Viewing
+	- 33 MBps * 4 = 132 MBps
+
+
+
+
+Data:
+UserInfo - 
+	- UserId
+	- Location
+	- IdentityInfo
+
+Content
+	- contentType
+	- contentId
+	- chunks[urls, urls]
+	- tags[]
+	- keywords[]
+
+ContentType
+	- Video
+	- Audio
+	- pics
+
+Tag
+	- tagId
+	- tagName
+	- tagType
+
+keyword
+	- id
+	- name
+	- desc
+
+

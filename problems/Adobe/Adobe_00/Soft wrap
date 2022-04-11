@@ -1,0 +1,54 @@
+Soft wrap
+	-> View port
+	-> New line on reaching end of the line
+	-> Content will not change
+
+Open file -> Same content wil be displayed
+
+Ask
+- Create Library 
+
+Inputs
+	- View Port (Number of character / Pixel info)
+	- Text that needs to be displayed
+	- Constraints
+
+Viewer	
+- Zoom-In & Zoom-out? - Not required for library
+- Formatting
+
+Output
+	- How the content will get displayed
+		- Number of characters in each line
+
+
+String softWrap(String input, int maxChar);
+
+this is a simple line. this is a simple line. this is a simple line. this is a simple line
+
+
+input
+abcdefghijklmnopqrstuvwxyz
+maxChar = 20
+
+output 
+abcdefghijklmnopqrst
+uvwxyz
+
+Assumptions - Words will have single space
+
+Output - Number of lines required
+
+EachLine - number of words
+Content - List of words
+
+{
+	int lineCount;
+	List<List<String> words; Size of the list = number to line exp
+}
+
+ List<List<String> softWrap(List<List<String>> words, int maxChar);
+
+
+
+

@@ -1,0 +1,50 @@
+Musesum
+-> Multiple rooms
+-> one room to n number of rooms
+-> x room -> y rooms
+
+entry-> room -> multiple doors -> connect multiple rooms -> connected to exit
+
+Front end team -> Appln -> person room 
+
+Input -> person room 
+Backend -> path to exit
+
+
+1. How to design the problem - Attributes
+	-> Graph design
+		1. Room -> node
+		2. Connection between rooms -> edges
+		3. Mueseum -> Collection of rooms 
+			Room -> List of connections
+				 -> Exit Room - boolean 
+		4. Proposed Input -> List of connection
+						  -> Assuming N rooms with room number as 0 till N
+						  -> List of connections -> 0->1, 2->3, 2->4
+						  		List<List<Integer>> [[0,1],[2,3],[2,4]] 
+						  -> Starting Room -> integer
+
+2.Solution to the problem 
+	- Class design
+		Mueseum -> Collection of rooms 
+		Room -> List of connections
+				 -> Exit Room - boolean 
+	- Output format (Contract)
+		-> Route map [0->3->5->7]
+			- Any one route - No optimal requirement expected
+	- Implementation
+		-> DFS 
+		-> BFS - approach  (depends on graphs is getting formed)
+
+		0
+	1			2
+4		5	3E		6
+
+7
+
+3
+
+Graph 
+ Room - node
+ Connection - edges
+

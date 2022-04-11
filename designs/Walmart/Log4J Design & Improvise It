@@ -1,0 +1,62 @@
+Log4J Design & Improvise It
+	- Logging the information 
+	- Logs in various level (Info, trace, debug, warn..)
+	- File based, console based logging
+	- Appender
+		- Rolling
+		- Date
+	- Multithreaded ( Thread safe)
+	- Asynchronously logging (Persisting in background)
+	- Properties based configuration
+	- Changing log level of application dynamically during running of the applcation
+
+Class Design
+
+interface
+void log()
+void configure(Properties property)
+
+Logger
+ - class information;
+ - void log(...String);
+
+
+ Properties
+ 	- LogLevel
+ 	- appenderType
+ 	- Properties()
+ 	- setter & getters
+ 	- void configure(default parameters)
+ 	- appender
+
+Appender
+ 	- appenderType
+ 	- FileFormats
+
+RollingAppender
+	- maxFiles
+	- maxSize 
+	- sizeNotation (MB, KB, etc)
+	- RollingAppender(all arg) & no arg
+	- void configure(default parameters)
+	- setter & getter
+
+DateTimeBasedAppender
+	- DateFormat
+	- value
+	- DateTimeBasedAppender(all arg) & no arg
+	-  void configure(default parameter)
+
+FolderBasedAppender
+
+
+Processor
+	- Collecting logs
+	- Stream operation
+
+log() -> Thread1 = Queue() -> Thread 2 = readQueue() -> Thread 3 = Stream 
+
+
+
+
+
